@@ -14,11 +14,11 @@
 <body>
 <header class="nav"><div class="wrap">
   <a class="logo" href="#">Byz<span>Form</span></a>
-  <nav><a href="#how">Ako to funguje</a><a href="#sample">Ukážka</a><a href="#pricing">Cenník</a><a href="#faq">Otázky</a><span class="lang"><a href="../">EN</a> <a href="../cs/">CS</a> <b>SK</b> <a href="../pl/">PL</a> <a href="../de/">DE</a></span><a class="btn" href="#start">Získať bezplatný prehľad</a></nav>
+  <nav><a href="#how">Ako to funguje</a><a href="#sample">Ukážka</a><a href="#pricing">Cenník</a><a href="#faq">Otázky</a><details class="langdd"><summary><img src="https://flagcdn.com/sk.svg" width="20" height="15" alt="">SK</summary><div class="langmenu"><a href="../" hreflang="en"><img src="https://flagcdn.com/gb.svg" width="20" height="15" alt="">English</a><a href="../cs/" hreflang="cs"><img src="https://flagcdn.com/cz.svg" width="20" height="15" alt="">Čeština</a><a href="../sk/" class="on" hreflang="sk"><img src="https://flagcdn.com/sk.svg" width="20" height="15" alt="">Slovenčina</a><a href="../pl/" hreflang="pl"><img src="https://flagcdn.com/pl.svg" width="20" height="15" alt="">Polski</a><a href="../de/" hreflang="de"><img src="https://flagcdn.com/de.svg" width="20" height="15" alt="">Deutsch</a></div></details><a class="btn" href="#start">Získať bezplatný prehľad</a></nav>
 </div></header>
 
 <section class="hero"><div class="wrap">
-  <div class="pill"><b style="color:#1f5eff">Pilot 2026</b> · Pre softvérové firmy a poskytovateľov IT služieb · CZ · SK · PL · AT · DE · celá EÚ</div>
+  <div class="pill"><b style="color:#0071e3">Pilot 2026</b> · Pre softvérové firmy a poskytovateľov IT služieb · CZ · SK · PL · AT · DE · celá EÚ</div>
   <h1>Viac než 1 000 IT zákaziek v EÚ týždenne. Pošleme vám tých pár, ktoré môžete vyhrať.</h1>
   <p class="lead">ByzForm prečíta každé oznámenie o vyhlásení IT zákazky v TED, vyhodnotí ho podľa vašich technológií, veľkosti a referencií a jasne vám povie: <b>uchádzať sa, zvážiť, alebo vynechať</b> — s lehotou na predkladanie ponúk, hodnotou zákazky a rizikami na jednej strane.</p>
   <div class="cta-row">
@@ -53,7 +53,7 @@
     <tr><td>Pro Arbeit Kreis Offenbach — Secure citizen portal</td><td class="hide-m">DE</td><td>neuvedená</td><td class="hide-m">11. 12. 2026</td><td class="v con">Zvážiť · 70</td></tr>
     <tr><td>Centrum e-Zdrowia — POPI platform</td><td class="hide-m">PL</td><td>≈ 2,87 mil. €</td><td class="hide-m">30. 11. 2026</td><td class="v skip">Vynechať · 45</td></tr>
   </table>
-  <p style="margin-top:20px"><a href="../sample.html">Prečítajte si celý vzorový prehľad s podmienkami účasti, kritériami na vyhodnotenie ponúk a rizikami →</a></p>
+  <p style="margin-top:28px;text-align:center"><a href="../sample.html">Prečítajte si celý vzorový prehľad s podmienkami účasti, kritériami na vyhodnotenie ponúk a rizikami →</a></p>
 </div></section>
 
 <section id="pricing"><div class="wrap">
@@ -97,5 +97,6 @@
 </div></section>
 
 <footer><div class="wrap">© 2026 Tím ByzForm · <a href="mailto:byzform@byzform.com">byzform@byzform.com</a> · <a href="../terms.html">Podmienky</a> · <a href="../privacy.html">Ochrana súkromia</a> · Údaje o zákazkách © Európska únia, TED, opätovne použité v súlade s politikou otvorených údajov EÚ.</div></footer>
+<script>document.addEventListener("click",e=>{document.querySelectorAll("details.langdd[open]").forEach(d=>{if(!d.contains(e.target))d.removeAttribute("open")})})</script>
 </body>
 </html>
