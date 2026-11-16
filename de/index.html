@@ -14,11 +14,11 @@
 <body>
 <header class="nav"><div class="wrap">
   <a class="logo" href="#">Byz<span>Form</span></a>
-  <nav><a href="#how">So funktioniert's</a><a href="#sample">Beispiel</a><a href="#pricing">Preise</a><a href="#faq">FAQ</a><span class="lang"><a href="../">EN</a> <a href="../cs/">CS</a> <a href="../sk/">SK</a> <a href="../pl/">PL</a> <b>DE</b></span><a class="btn" href="#start">Kostenlosen Digest erhalten</a></nav>
+  <nav><a href="#how">So funktioniert's</a><a href="#sample">Beispiel</a><a href="#pricing">Preise</a><a href="#faq">FAQ</a><details class="langdd"><summary><img src="https://flagcdn.com/de.svg" width="20" height="15" alt="">DE</summary><div class="langmenu"><a href="../" hreflang="en"><img src="https://flagcdn.com/gb.svg" width="20" height="15" alt="">English</a><a href="../cs/" hreflang="cs"><img src="https://flagcdn.com/cz.svg" width="20" height="15" alt="">Čeština</a><a href="../sk/" hreflang="sk"><img src="https://flagcdn.com/sk.svg" width="20" height="15" alt="">Slovenčina</a><a href="../pl/" hreflang="pl"><img src="https://flagcdn.com/pl.svg" width="20" height="15" alt="">Polski</a><a href="../de/" class="on" hreflang="de"><img src="https://flagcdn.com/de.svg" width="20" height="15" alt="">Deutsch</a></div></details><a class="btn" href="#start">Kostenlosen Digest erhalten</a></nav>
 </div></header>
 
 <section class="hero"><div class="wrap">
-  <div class="pill"><b style="color:#1f5eff">Pilot 2026</b> · Für Softwarehäuser und IT-Dienstleister · CZ · SK · PL · AT · DE · EU-weit</div>
+  <div class="pill"><b style="color:#0071e3">Pilot 2026</b> · Für Softwarehäuser und IT-Dienstleister · CZ · SK · PL · AT · DE · EU-weit</div>
   <h1>Über 1.000 IT-Ausschreibungen pro Woche in der EU. Wir senden Ihnen die wenigen, die Sie gewinnen können.</h1>
   <p class="lead">ByzForm liest jede IT-Auftragsbekanntmachung auf TED, bewertet sie anhand Ihres Technologie-Stacks, Ihrer Unternehmensgröße und Ihrer Referenzen und sagt Ihnen klar: <b>bieten, prüfen oder auslassen</b> – mit Angebotsfrist, Auftragswert und Risiken auf einer Seite.</p>
   <div class="cta-row">
@@ -53,7 +53,7 @@
     <tr><td>Pro Arbeit Kreis Offenbach — Secure citizen portal</td><td class="hide-m">DE</td><td>nicht angegeben</td><td class="hide-m">11 Dec 2026</td><td class="v con">Prüfen · 70</td></tr>
     <tr><td>Centrum e-Zdrowia — POPI platform</td><td class="hide-m">PL</td><td>≈ 2,87 Mio. €</td><td class="hide-m">30 Nov 2026</td><td class="v skip">Auslassen · 45</td></tr>
   </table>
-  <p style="margin-top:20px"><a href="../sample.html">Vollständigen Beispiel-Digest mit Anforderungen, Zuschlagskriterien und Risiken lesen →</a></p>
+  <p style="margin-top:28px;text-align:center"><a href="../sample.html">Vollständigen Beispiel-Digest mit Anforderungen, Zuschlagskriterien und Risiken lesen →</a></p>
 </div></section>
 
 <section id="pricing"><div class="wrap">
@@ -97,5 +97,6 @@
 </div></section>
 
 <footer><div class="wrap">© 2026 Team ByzForm · <a href="mailto:byzform@byzform.com">byzform@byzform.com</a> · <a href="../terms.html">AGB</a> · <a href="../privacy.html">Datenschutz</a> · Ausschreibungsdaten © Europäische Union, TED, weiterverwendet gemäß der Open-Data-Politik der EU.</div></footer>
+<script>document.addEventListener("click",e=>{document.querySelectorAll("details.langdd[open]").forEach(d=>{if(!d.contains(e.target))d.removeAttribute("open")})})</script>
 </body>
 </html>
