@@ -173,6 +173,9 @@ a:hover { color: var(--accent-hover); }
 }
 .langmenu a:hover,
 .langmenu .on { background: var(--surface); }
+.langmenu:has(small) { width: min(17rem, calc(100vw - 2 * var(--gutter))); }
+.langmenu a:has(small) { flex-wrap: wrap; }
+.langmenu small { color: var(--muted); }
 .langmenu .on { font-weight: 700; }
 .langmenu .on::after { content: "✓"; margin-inline-start: auto; color: var(--accent); }
 
@@ -363,6 +366,8 @@ h2 { margin: 0 0 14px; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.045e
 .pilot-rate { margin: 8px 0 0; }
 .pilot-rate strong { color: var(--ink); }
 .plan-note { margin: 0 0 16px; }
+.sub:has(+ .pricing-language) { margin-bottom: 12px; }
+.pricing-language { margin: 0 auto 22px; text-align: center; color: var(--muted); font-size: .875rem; }
 .plan ul { flex: 1; padding-inline-start: 18px; margin: 20px 0 22px; color: var(--muted); }
 .plan li + li { margin-top: 8px; }
 .plan li::marker { color: var(--accent); }
@@ -402,6 +407,7 @@ h2 { margin: 0 0 14px; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.045e
 .final h2 { max-width: 24ch; margin-inline: auto; }
 .final p { max-width: 62ch; margin: 0 auto 24px; color: #e1edfd; }
 .final .contact-email { margin: 12px auto 0; font-size: .875rem; }
+.final .delivery-language { margin: 12px auto 0; font-size: .875rem; }
 .final .contact-email a { color: #fff; }
 .final .contact-email a:focus-visible { outline-color: #fff; }
 .final .btn { background: #fff; color: #104c8d; }
@@ -460,12 +466,11 @@ footer .wrap { overflow-wrap: anywhere; }
 .doc table caption { margin-bottom: 8px; color: var(--ink); font-weight: 680; text-align: start; }
 .doc th, .doc td { padding: 9px clamp(8px, 1.2vw, 14px); border: 1px solid var(--line); text-align: start; vertical-align: top; }
 .doc th { background: #f0f5fc; }
-.table-scroll { overflow-x: auto; margin: 16px 0 22px; }
-.doc .table-scroll table { min-width: 39rem; margin: 0; }
+.doc-matrix { table-layout: fixed; }
 .doc-matrix th[scope="row"] { width: 30%; font-weight: 630; }
-.doc-matrix :is(th, td):nth-child(2) { min-width: 8.5rem; }
-.table-hint, .doc-note, .digest-source { color: var(--muted); font-size: .875rem; }
-.table-hint { display: none; margin: 8px 0; }
+.matrix-label { display: none; }
+.doc-note, .digest-source, .snapshot-date { color: var(--muted); font-size: .875rem; }
+.snapshot-date { margin: 0 0 16px; }
 .doc th[style*="text-align"], .doc td[style*="text-align"] { text-align: start !important; }
 .doc li + li { margin-top: 8px; }
 .doc hr { border: 0; border-top: 1px solid var(--line); margin-block: 30px; }
@@ -536,6 +541,7 @@ footer .wrap { overflow-wrap: anywhere; }
     border-top: 1px solid var(--line);
   }
   .hero-layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .home main { overflow-wrap: anywhere; }
   .hero-products { width: 100%; max-width: 470px; }
   .grid3, .price { grid-template-columns: minmax(0, 1fr); }
   .sample-links { grid-template-columns: minmax(0, 1fr); }
@@ -544,6 +550,9 @@ footer .wrap { overflow-wrap: anywhere; }
 @media (max-width: 520px) {
   .nav .wrap, .nav nav { gap: 6px; }
   .nav .btn, .langdd summary { font-size: .8125rem; }
+  .nav nav:not(.section-nav) { justify-content: flex-end; }
+  .nav nav:not(.section-nav) .btn { min-width: 0; }
+  .logo img { width: min(32vw, 8.7rem); }
   .langdd summary { padding-inline: 4px; }
   .langdd img { width: 17px; height: 13px; }
   .hero { padding-top: 26px; }
@@ -563,7 +572,21 @@ footer .wrap { overflow-wrap: anywhere; }
 }
 
 @media (max-width: 680px) {
-  .table-hint { display: block; }
+  .doc-matrix, .doc-matrix :is(tbody, tr, th, td) { display: block; width: auto; }
+  .doc-matrix thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .doc-matrix tbody tr { border: 1px solid var(--line); border-radius: 12px; overflow: clip; }
+  .doc-matrix tbody tr + tr { margin-top: 12px; }
+  .doc-matrix tbody :is(th, td) { padding: 10px 14px; border: 0; }
+  .doc-matrix tbody td + td { border-top: 1px solid var(--line); }
+  .doc-matrix th[scope="row"] { width: auto; }
+  .matrix-label { display: block; margin-bottom: 3px; color: var(--muted); font-size: .8125rem; font-weight: 650; }
 }
 
 @media (max-width: 340px) {
