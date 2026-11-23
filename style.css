@@ -68,30 +68,20 @@ a:hover { color: var(--accent-hover); }
   padding-block: 8px;
 }
 
-.nav nav { gap: clamp(8px, 2vw, 26px); }
+.nav nav { min-width: 0; gap: clamp(8px, 2vw, 26px); }
 .nav .section-nav { gap: clamp(10px, 2vw, 28px); margin-inline-start: auto; }
 .home .nav .wrap { gap: clamp(10px, 1.5vw, 22px); }
-.home .nav > .wrap > .langdd { margin-inline-start: 4px; }
 
 .logo {
   display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--ink);
-  text-decoration: none;
-  font-size: 1.32rem;
-  font-weight: 740;
-  letter-spacing: -.055em;
-  white-space: nowrap;
-  line-height: 1;
-}
-.logo span { color: var(--accent); margin-inline-start: -8px; }
-.logo::before {
-  content: "";
   flex: none;
-  width: 34px;
-  height: 34px;
-  background: url("assets/byzform-mark.svg") center / contain no-repeat;
+  align-items: center;
+  min-height: 44px;
+}
+.logo img {
+  display: block;
+  width: clamp(7.15rem, 11vw, 8.7rem);
+  height: auto;
 }
 
 .section-nav a {
@@ -161,6 +151,9 @@ a:hover { color: var(--accent-hover); }
   inset-inline-end: 0;
   top: calc(100% + 6px);
   min-width: 176px;
+  max-height: 60vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   padding: 5px;
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -532,7 +525,7 @@ footer .wrap { overflow-wrap: anywhere; }
   html { scroll-padding-top: 12px; }
   .nav { position: relative; }
   .home .nav .wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; padding-block: 6px 0; }
-  .home .nav > .wrap > .langdd { margin-inline-start: 0; }
+  .home .nav > .wrap > .langdd { grid-area: 1 / 2; }
   .home .nav > .wrap > .btn { display: none; }
   .nav .section-nav {
     grid-column: 1 / -1;
@@ -551,8 +544,6 @@ footer .wrap { overflow-wrap: anywhere; }
 @media (max-width: 520px) {
   .nav .wrap, .nav nav { gap: 6px; }
   .nav .btn, .langdd summary { font-size: .8125rem; }
-  .logo { font-size: 1.18rem; }
-  .logo::before { width: 28px; height: 28px; }
   .langdd summary { padding-inline: 4px; }
   .langdd img { width: 17px; height: 13px; }
   .hero { padding-top: 26px; }
@@ -576,7 +567,6 @@ footer .wrap { overflow-wrap: anywhere; }
 }
 
 @media (max-width: 340px) {
-  .nav nav .langmenu { inset-inline-end: auto; inset-inline-start: 0; }
   .nav .wrap { gap: 4px; }
 }
 
